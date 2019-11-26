@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   # Application root
   root to: 'home#index'
 
-  # User controller route configuration
-  devise_for :users
+  # User controller route configurationS
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -12,5 +11,5 @@ Rails.application.routes.draw do
   # Resources
   resources :books
   resources :forum_posts
-  
+
 end
