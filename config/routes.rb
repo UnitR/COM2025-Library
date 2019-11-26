@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  # Application root
+  root to: 'home#index'
+
+  # User controller route configuration
+  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  # Resources
+  resources :books
+  resources :forum_posts
+  
 end
