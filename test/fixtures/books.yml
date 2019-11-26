@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  genre_id: 1
+  author_id: 1
+  book_name: MyString
+  in_series: false
+  seq_in_series: 1
+
+two:
+  id: 1
+  genre_id: 1
+  author_id: 1
+  book_name: MyString
+  in_series: false
+  seq_in_series: 1
