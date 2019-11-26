@@ -63,3 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise user authentication
 gem 'devise'
+
+# UI Gems
+gem 'bootstrap', '~> 4.3.1'
+gem 'modernizr-rails'

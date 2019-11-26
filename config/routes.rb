@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :books
   resources :forum_posts
 
+  # Routes
+  get '/home/index', to: 'home#index'
+  get '/forum', to: 'forum_posts#index'
+
 end
