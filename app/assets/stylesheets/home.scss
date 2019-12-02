@@ -1,3 +1,42 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$linkColour: black;
+$hoverColour: #464646;
+$titleFont: 32pt;
+$subtitleFont: 22pt;
+
+nav.navbar {
+    display: none
+}
+
+.flexContainer {
+
+    background-color: rgba(180, 180, 180, 0.85);
+
+    .sectionLink {
+        color: $linkColour;
+        font-size: $titleFont;
+        transition: color 0.3s;
+    }
+    .sectionLink:hover {
+        color: $hoverColour;
+        text-decoration: none;
+    }
+
+    .miscLink {
+        font-size: $subtitleFont;
+    }
+
+    .vSeparator {
+        color: $linkColour;
+        font-size: $titleFont;
+    }
+}
+
+body {
+    background: image-url("index_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

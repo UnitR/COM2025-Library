@@ -12,8 +12,15 @@ Rails.application.routes.draw do
   resources :books
   resources :forum_posts
 
-  # Routes
+  # ----- GET method routes ----- 
+  
+  # Home controller
+  get '/', to: 'home#index'
+  get '/home', to: 'home#index'
   get '/home/index', to: 'home#index'
-  get '/forum', to: 'forum_posts#index'
+
+  # Forum controller
+  get '~/forum', to: 'forum_posts#index'
+  get '~/books', to: 'books#index'
 
 end
