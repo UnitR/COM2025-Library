@@ -4,5 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  # Model references
   has_many :comments
+  has_many :forum_posts
+  belongs_to :role
+
+  before_validation :set_default_role
+
+  private
+  def set_default_role
+    self.role_id ||= Role.find_by_name('REGULAR').id
+  end
 end

@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authorize_admin, :except => ["index", "show"]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
@@ -71,4 +72,5 @@ class BooksController < ApplicationController
     def book_params
       params.fetch(:book, {})
     end
+
 end

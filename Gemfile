@@ -65,3 +65,4 @@ gem 'devise'
 # UI Gems
 gem 'bootstrap', '~> 4.3.1'
 gem 'modernizr-rails'
+gem 'jquery-rails'

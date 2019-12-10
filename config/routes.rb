@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   # Application root
   root to: 'home#index'
 
-  # User controller route configurationS
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  # User controller route configuration
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
   # Resources
   resources :books
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
   get '/home/index', to: 'home#index'
 
   # Forum controller
-  get '~/forum', to: 'forum_posts#index'
-  get '~/books', to: 'books#index'
+  get '/forum', to: 'forum_posts#index'
+  get '/books', to: 'books#index'
 
 end

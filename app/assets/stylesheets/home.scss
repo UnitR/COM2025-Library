@@ -2,27 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$linkColour: black;
-$hoverColour: #464646;
-$titleFont: 32pt;
-$subtitleFont: 22pt;
+/* Variables */
+@import "_globalVars";
 
-nav.navbar {
-    display: none
+/* Rules */
+.flexWrapper {
+    position: relative;
 }
 
 .flexContainer {
 
-    background-color: rgba(180, 180, 180, 0.85);
+    background-color: rgba($mainBg, $mainTsp);
 
     .sectionLink {
         color: $linkColour;
         font-size: $titleFont;
-        transition: color 0.3s;
+        transition: text-decoration 0.1s;
     }
     .sectionLink:hover {
-        color: $hoverColour;
-        text-decoration: none;
+        text-decoration: underline;
     }
 
     .miscLink {
