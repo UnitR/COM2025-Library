@@ -13,6 +13,21 @@ function showBookDetails(jBookBtn) {
     });
 }
 
+// Ajax call to edit a book
+function editBook(jBookBtn) {
+    var bookId = $(jBookBtn).data("id");
+    $.ajax({
+        url: "/books/" + bookId + "/edit",
+        type: "GET",
+        success: function(data) {
+            setDetails(data);
+        },
+        error: function() {
+            alert("Could not find requested for editing book.");
+        }
+    });
+}
+
 // Ajax call to delete a book
 function deleteBook(jBookBtn) {
     var oBookBtn = $(jBookBtn);

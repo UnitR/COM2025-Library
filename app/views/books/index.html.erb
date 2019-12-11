@@ -31,7 +31,7 @@
 
       <% if current_user.role.name == ROLE_ADMIN %>
         <div class="extraButtons flexContainer">
-          <button class="btn elBtn" data-id="<%= book.id %>" onClick="showBookDetails(this)">
+          <button class="btn elBtn" data-id="<%= book.id %>" onClick="editBook(this)">
             Edit
           </button>
           <button class="btn elBtn" data-id="<%= book.id %>" onClick="deleteBook(this)">

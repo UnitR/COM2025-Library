@@ -22,6 +22,12 @@
     .sectionLink:hover {
         text-decoration: underline;
     }
+    .sectionLink:first-child {
+        margin-top: 10px;
+    }
+    .sectionLink:last-child {
+        margin-bottom: 10px;
+    }
 
     .miscLink {
         font-size: $subtitleFont;
@@ -30,6 +36,13 @@
     .vSeparator {
         color: $linkColour;
         font-size: $titleFont;
+    }
+
+    hr {
+        border: 1px solid white;
+        width: 10%;
+        margin: 0;
+        padding: 0;
     }
 }
 

@@ -1,10 +1,52 @@
-<h1>Editing Book</h1>
+<h1>Editing Book <%= @book.book_name %></h1>
 
-<%= form_for @book do |b| %>
-    <%= b.text_field :book_title %>
-    <%= b.check_box :is_in_series %>
-    <%= b.number :seq_in_series %>
-<% end %>
+    <%= form_for @book do |b| %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+        <div class="form-group">
+            <%= b.label :author_name, "Author's name" %>
+            <%= b.text_field :author_name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= b.label :book_name %>
+            <%= b.text_field :book_name, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                <%= b.check_box :in_series, class: "form-check-input", onclick: "$('#bookSeq').toggle()" %>
+                <%= b.label :in_series, "Is the book in a series?", class: "form-check-label" %>
+            </div>
+        </div>
+
+        <div class="form-group" id="bookSeq" style="display: none">
+            <%= b.label :seq_in_series, "Book sequence in series" %>
+            <%= b.number_field :seq_in_series, class: "form-control col-sm-1" %>
+        </div>
+
+        <%= b.fields_for :book_detail do |bd| %>
+        
+            <div class="form-group">
+                <%= bd.label :edition %>
+                <%= bd.text_field :edition, class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+                <%= bd.label :isbn, 'ISBN' %>
+                <%= bd.text_field :isbn, class: "form-control" %>
+            </div>
+            
+        <% end %>
+
+        <div class="form-group">
+            <%= b.label :synopsis %>
+            <%= b.text_area :synopsis, class: "form-control" %>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary col-sm-8" type="submit">
+                Submit
+            </button>
+        </div>
+
+    <% end %>

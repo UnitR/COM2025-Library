@@ -22,6 +22,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    render :layout => false
   end
 
   # POST /books
