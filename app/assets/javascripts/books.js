@@ -4,9 +4,8 @@ function showBookDetails(jBookBtn) {
     $.ajax({
         url: "/books/" + bookId,
         type: "GET",
-        success: function(bookData) {
-            $(".modal-body").html(bookData.html);
-            $("#bookInfoModal").modal("show");
+        success: function(data) {
+            setDetails(data);
         },
         error: function() {
             alert("Could not find any information about the book.");
@@ -28,6 +27,12 @@ function deleteBook(jBookBtn) {
             }
         });
     }
+}
+
+// Update book details
+function setDetails(bookData) {
+    $(".modal-body").html(bookData);
+    $("#bookInfoModal").modal("show");
 }
 
 // Update header text for deleted elements

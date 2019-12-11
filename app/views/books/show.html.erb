@@ -1,4 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<header class="modelHeading">
+    <span class="infoText">Title:</span>&nbsp;
+    <%= @book.book_name %>
+</header>
+<hr />
+<section>
+    <span class="infoText">Synopsis:</span>
+    <article class="modelDetails">
+        <%= @book.synopsis %>
+    </article>
+</section>
+<hr />
+<footer class="modelFooter">
+    <span class="infoText">Written by:</span>&nbsp;
+    <%= @book.author_name %>
+</footer>
