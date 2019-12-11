@@ -28,7 +28,6 @@ class SetModelSettings < ActiveRecord::Migration[5.2]
     add_index(:forum_posts, :title)
     add_index(:forum_posts, :deleted)
     add_index(:comments, [:id, :user_id, :post_id], unique: true)
-    add_index(:authors, [:first_name, :last_name], unique: true)
     add_index(:books, :book_name)
     add_index(:genres, :name, unique: true)
 
@@ -44,12 +43,6 @@ class SetModelSettings < ActiveRecord::Migration[5.2]
 
     # Genre
     change_column_null(:genres, :name, false)
-
-    # Author
-    change_column_null(:authors, :first_name, false)
-    change_column_null(:authors, :last_names, false)
-    change_column_null(:authors, :date_born, true)
-    change_column_null(:authors, :date_dead, true)
 
     # Forum Post
     change_column_null(:forum_posts, :content, true)

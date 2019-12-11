@@ -1,6 +1,10 @@
 <h1>Editing Book</h1>
 
-<%= render 'form', book: @book %>
+<%= form_for @book do |b| %>
+    <%= b.text_field :book_title %>
+    <%= b.check_box :is_in_series %>
+    <%= b.number :seq_in_series %>
+<% end %>
 
 <%= link_to 'Show', @book %> |
 <%= link_to 'Back', books_path %>

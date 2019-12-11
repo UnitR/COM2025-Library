@@ -16,6 +16,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @book.build_book_detail
   end
 
   # GET /books/1/edit
@@ -26,14 +27,20 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    @book.created_at = Time.now.utc
+    @book.updated_at = Time.now.utc
+
+    if not @book.in_series
+      @book.seq_in_series = 0;
+    end
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to books_url, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
+        format.json { render json: @book.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +64,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.html { redirect_to books_url, status: 303 }
       format.json { head :no_content }
     end
   end
@@ -70,7 +77,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.fetch(:book, {})
+      params.require(:book).permit(:author_name, :book_name, :in_series, :seq_in_series, :synopsis, book_detail_attributes: [:edition, :isbn])
     end
 
 end

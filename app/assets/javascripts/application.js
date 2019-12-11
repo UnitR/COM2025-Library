@@ -15,3 +15,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+function setNavActive(page) {
+    $("nav.navbar ul li.active").removeClass("active");
+    $("nav.navbar ul #nav-" + page).addClass("active");
+}

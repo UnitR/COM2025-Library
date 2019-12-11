@@ -19,6 +19,7 @@
 
 /* Variables */
 $navbarHeight: 60px;
+$navbarMiscText: 10pt;
 $mainTopBttm: $navbarHeight + 10;
 $navbarAccent: black;
 
@@ -35,6 +36,15 @@ main {
     bottom: $mainTopBttm;
     padding: 10px;
     width: 100%;
+}
+
+#noticeContainer {
+    border: 1px solid black;
+
+    p.alert.alert-success {
+        margin-bottom: 0;
+        border-radius: 0;
+    }
 }
 
 nav.navbar {
@@ -60,13 +70,19 @@ nav.navbar {
         background-color: white;
         color: black !important;
     }
-    .nav-item:last-child {
-        position: absolute;
-        right: 0;
+    .nav-item:hover a {
+        color: black !important;
     }
 
-    .nav-link .active {
+    .nav-item.active {
         text-decoration: underline;
+    }
+
+    span#accAction {
+        font-size: $navbarMiscText;
+    }
+    span.navbar-text {
+        font-size: $navbarMiscText;
     }
 }
 
@@ -96,4 +112,65 @@ nav.navbar {
     right: -7px;
     top: -1px;
     bottom: 0;
+}
+
+.pageTitle {
+    text-align: center;
+    width: 100%;
+    color: $mainBg;
+    font-weight: bold;
+    font-size: $titleFont;
+}
+
+.elContainer {
+
+    position: relative;
+
+    .el {
+        position: relative;
+        margin-bottom: 50px;
+        padding: 10px 20px;
+        border-radius: 5px;
+    
+        background: rgba($mainBg, $mainTsp);
+        color: white;
+    
+        .elHeader {
+            font-size: 24pt;
+            font-weight: bold;
+        }
+        .elSubtitle {
+            font-size: 16pt;
+            font-style: italic;
+        }
+        .elDetails {
+            font-size: 12pt;
+        }
+    }
+}
+
+.elButtons {
+    width: auto;
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    top: 0;
+}
+
+button.btn.elBtn {
+    border: 1px solid $mainBg;
+    border-radius: 3px;
+    background: white;
+    margin: 5px;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+button.btn.elBtn:hover {
+    background-color: $mainBg;
+    box-shadow: 0 0 5px 1px $mainBg;
+    color: white;
+}
+
+button.btn.elBtn:hover a {
+    color: white;
 }

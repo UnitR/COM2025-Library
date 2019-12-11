@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
   private
   def set_default_role
-    self.role_id ||= Role.find_by_name('REGULAR').id
+    self.role_id ||= Role.find_by_name(ROLE_REG).id
   end
 end
