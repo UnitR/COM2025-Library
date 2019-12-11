@@ -29,7 +29,7 @@
         </button>
       </div>
 
-      <% if current_user.role.name == ROLE_ADMIN %>
+      <% if user_signed_in? && current_user.role.name == ROLE_ADMIN %>
         <div class="extraButtons flexContainer">
           <button class="btn elBtn" data-id="<%= book.id %>" onClick="editBook(this)">
             Edit
