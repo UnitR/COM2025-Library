@@ -28,6 +28,22 @@ function editBook(jBookBtn) {
     });
 }
 
+// Ajax call to edit a book
+function updateBook(iBookId) {
+    $.ajax({
+        url: "/books/" + iBookId,
+        type: "POST",
+        data: $("#formBookUpdate").serialize(),
+        success: function(data) {
+            $("#bookInfoModal").modal("hide");
+            $("#noticeContainer p").text('Successfully updated book.');
+        },
+        error: function() {
+            alert("Book edit was unsuccessful.");
+        }
+    });
+}
+
 // Ajax call to delete a book
 function deleteBook(jBookBtn) {
     var oBookBtn = $(jBookBtn);

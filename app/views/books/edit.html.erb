@@ -1,6 +1,6 @@
 <h1>Editing Book <%= @book.book_name %></h1>
 
-    <%= form_for @book do |b| %>
+    <%= form_for @book, html: {id: 'formBookUpdate' } do |b| %>
 
         <div class="form-group">
             <%= b.label :author_name, "Author's name" %>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="text-center">
-            <button class="btn btn-primary col-sm-8" type="submit">
+            <button class="btn btn-primary col-sm-8" onclick="updateBook(<%= @book.id %>)">
                 Submit
             </button>
         </div>
