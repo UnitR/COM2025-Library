@@ -1,17 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  genre_id: 1
-  author_id: 1
-  book_name: MyString
-  in_series: false
+  book_name: "Hyperion"
+  in_series: true
   seq_in_series: 1
+  author_name: "Dan Simmons"
+  synopsis: "Hyperion is a Hugo Award-winning 1989 science fiction novel by American writer Dan Simmons. It is the first book of his Hyperion Cantos. The plot of the novel features multiple time-lines and characters. It follows a similar structure to The Canterbury Tales by Geoffrey Chaucer. The next book in the series was The Fall of Hyperion, published in 1990."
 
 two:
-  id: 1
-  genre_id: 1
-  author_id: 1
-  book_name: MyString
-  in_series: false
-  seq_in_series: 1
+  book_name: "The Fall of Hyperion"
+  in_series: true
+  seq_in_series: 2
+  author_name: "Dan Simmons"
+  synopsis: "The Fall of Hyperion is the second novel in the Hyperion Cantos, a science fiction series by American author Dan Simmons. The novel, written in 1990, won both the 1991 British Science Fiction and Locus Awards. It was also nominated for the Hugo Award and the Nebula Award. Set in the 29th century, the novel documents a pilgrimage to the planet Hyperion. The eight pilgrims intend to travel to the Valley of the Time Tombs, where the Shrike, a metallic creature alleged to grant one wish to the members of a pilgrimage, dwells. Powerful entities such as the Hegemony of Man and the AI TechnoCore seek to influence the pilgrims' journey."
