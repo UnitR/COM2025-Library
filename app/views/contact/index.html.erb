@@ -1,0 +1,39 @@
+<div class="container col-lg-8">
+
+    <h1>Contact us</h1>
+    <br />
+
+    <% if @contact_data && @contact_data[:error] %>
+        <div class="alert alert-danger">
+            <%= @contact_data[:error] %>
+        </div>
+    <% end %>
+
+    <%= form_for :contact, url: '/contact' do |c| %>
+
+        <div class="form-group">
+            <%= c.label :cust_email, 'Contact email'%>
+            <%= c.email_field :cust_email, class: 'form-control', value: (@contact_data[:cust_email] if @contact_data) %>
+        </div>
+
+        <div class="form-group">
+            <%= c.label :cust_name, 'Your name'%>
+            <%= c.text_field :cust_name, class: 'form-control', value: (@contact_data[:cust_name] if @contact_data) %>
+        </div>
+
+        <div class="form-group">
+            <%= c.label :message, 'Message'%>
+            <%= c.text_area :message, class: 'form-control', value: (@contact_data[:message] if @contact_data) %>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary col-sm-8" type="submit">
+                Submit
+            </button>
+        </div>
+
+    <% end %>
+
+    <script>setNavActive('contact');</script>
+
+</div>

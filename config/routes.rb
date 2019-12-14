@@ -20,4 +20,11 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index'
   get '/home/index', to: 'home#index'
 
+  # Contact controller
+  get '/contact', to: 'contact#index'
+  get '/contact/index', to: 'contact#index'
+  
+  # ----- POST method routes ----- 
+  post '/contact', to: 'contact#send_request'
+
 end
