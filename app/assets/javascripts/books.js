@@ -33,11 +33,8 @@ function updateBook(iBookId) {
     $.ajax({
         url: "/books/" + iBookId,
         type: "POST",
-        data: $("#formBookUpdate").serialize(),
-        success: function(data) {
-            $("#bookInfoModal").modal("hide");
-            $("#noticeContainer p").text('Successfully updated book.');
-        },
+        data: $("#formBook").serialize(),
+        success: bookUpdated(),
         error: function() {
             alert("Book edit was unsuccessful.");
         }
@@ -64,6 +61,12 @@ function deleteBook(jBookBtn) {
 function setDetails(bookData) {
     $(".modal-body").html(bookData);
     $("#bookInfoModal").modal("show");
+}
+
+// Indicate successful book update
+function bookUpdated() {
+    alert('Successfully updated book.');
+    $("#bookInfoModal").modal("hide");
 }
 
 // Update header text for deleted elements
